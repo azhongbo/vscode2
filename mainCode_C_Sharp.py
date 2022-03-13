@@ -1,26 +1,14 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
 
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode C# ( 範例 )"
+# MyCodeString = '''
+# ###  C# 範例程式 ####
+# ### file: mainCode_C_Sharp ###
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -30,7 +18,8 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_C_Sharp ###
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
 
 # ### -------------------------------------------------------------------
 # MyCodeTitle  = "RyanCode C# ( 範例 )"
@@ -39,15 +28,8 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_C_Sharp ###
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
-# ### -------------------------------------------------------------------
-# MyCodeTitle  = "RyanCode C# ( 範例 )"
-# MyCodeString = '''
-# ###  C# 範例程式 ####
-# ### file: mainCode_C_Sharp ###
-# xxxxxxxxxxxxxxxxxxxxxxxxxxx
-# '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
 
 # ### -------------------------------------------------------------------
 # MyCodeTitle  = "RyanCode C# ( 範例 )"
@@ -56,7 +38,12 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_C_Sharp ###
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+
+
+
 
 ### -------------------------------------------------------------------
 MyCodeTitle  = "RyanCode C# ( 類別 )"
@@ -187,7 +174,7 @@ namespace test3
 }
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -205,7 +192,7 @@ public class Global
     public static string test2 = "123";
 }
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -259,7 +246,7 @@ namespace downSmartIT
     }
 }
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -284,7 +271,7 @@ while ((line = file.ReadLine()) != null)
 file.Close();
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -358,7 +345,7 @@ namespace post
     }
 }
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -412,7 +399,7 @@ namespace test
 }
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -510,7 +497,7 @@ namespace test2
     }
 }
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -563,7 +550,7 @@ Process.Start(myProcess);
 this.Close();
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -575,11 +562,6 @@ MyCodeString = '''
 C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe Source\\TVinstall.sln
 c:\windows\Microsoft.NET\Framework\v3.5\bin\csc.exe /t:exe /out:MyApplication.exe MyApplication.cs
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

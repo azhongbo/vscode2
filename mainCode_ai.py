@@ -1,27 +1,5 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
-
 
 
 # ### -------------------------------------------------------------------
@@ -31,7 +9,27 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_ai
 # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode AI( 範例 )"
+# MyCodeString = '''
+# ###  Python AI ####
+# ### file: mainCode_ai
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode AI( 範例 )"
+# MyCodeString = '''
+# ###  Python AI ####
+# ### file: mainCode_ai
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -63,7 +61,7 @@ NVIDIA RTX 2080 Ti 運算速度快達到 GTX 1080 Ti 的兩倍（0.75 vs 0.4）
 
 https://timdettmers.com/2019/04/03/which-gpu-for-deep-learning/
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -124,7 +122,7 @@ plt.xticks(())
 plt.yticks(())
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -169,7 +167,7 @@ model.predict([150]) ## 預測 第150個
 cost = model.evaluate(x, y, batch_size=40) #測試一遍
 print('test cost:', cost)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -208,7 +206,7 @@ model.predict([150]) ## 預測 第150個
 cost = model.evaluate(x, y, batch_size=40) #測試一遍
 print('test cost:', cost)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -221,7 +219,7 @@ MyCodeString = '''
 指令
 conda create --name MyTest python=3.7
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -311,7 +309,7 @@ train_history = model.fit( x=train_feature_normalize,
 ### 評估準確率 ###
 scores = model.evaluate( test_feature_normalize, test_label_onehot)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -370,13 +368,6 @@ plt.xlabel("時間",fontproperties=myfont)
 plt.show()
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
-
-
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

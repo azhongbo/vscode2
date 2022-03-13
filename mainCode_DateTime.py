@@ -1,26 +1,14 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
 
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode DateTime ( 範例 )"
+# MyCodeString = '''
+# ###  C# 範例 範例程式 ####
+# ### 檔案: mainCode_DateTime
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -30,19 +18,7 @@ MyCodeName = sys.argv[2]
 # ### 檔案: mainCode_DateTime
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
-
-
-
-# ### -------------------------------------------------------------------
-# MyCodeTitle  = "RyanCode DateTime ( 範例 )"
-# MyCodeString = '''
-# ###  C# 範例 範例程式 ####
-# ### 檔案: mainCode_DateTime
-# xxxxxxxxxxxxxxxxxxxxxxxxxxx
-# '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
-
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -52,7 +28,17 @@ MyCodeName = sys.argv[2]
 # ### 檔案: mainCode_DateTime
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode DateTime ( 範例 )"
+# MyCodeString = '''
+# ###  C# 範例 範例程式 ####
+# ### 檔案: mainCode_DateTime
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -70,7 +56,7 @@ $date = date("Y-m-d H:i:s", time() - ( 0 * 24 * 60 * 60 ) );
 ## php 兩個日期相減
 $nn = ( strtotime($date1) - strtotime($date2) ) / 3600 / 24;
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -117,7 +103,7 @@ sub diff_date()
         print $result/(24*60*60),"\n";
     }
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -176,7 +162,7 @@ d3 = d1 + datetime.timedelta(days =10)
 ## %X 本地相應的時間表示
 ## %Z 當前時區的名稱
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -194,23 +180,6 @@ DateTime dt2 = DateTime.Now.AddMinutes(30);
 string cc = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
 string dd = DateTime.Now.AddMinutes(5).ToString("yyyy-MM-dd hh:mm:ss");
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################
