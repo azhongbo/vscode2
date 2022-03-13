@@ -1,0 +1,64 @@
+{
+	"name": "RyanCode",
+	"displayName": "RyanCode",
+	"description": "RyanCode",
+	"version": "1.0.8",
+	"publisher": "Ryan",
+	"engines": {
+		"vscode": "^1.27.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.MYDATA000001",
+		"onCommand:extension.MYDATA000002",
+		"onCommand:extension.MYDATA000003",
+		"onCommand:extension.sayHello"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.MYDATA000001",
+				"title": "RyanCode 測試 ( 範例0001 )"
+			},
+			{
+				"command": "extension.MYDATA000002",
+				"title": "RyanCode 測試 ( 範例0002 )"
+			},
+			{
+				"command": "extension.MYDATA000003",
+				"title": "RyanCode 測試 ( 範例0003 )"
+			},
+			{"command": "extension.sayHello","title": "Hello World"}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.21",
+		"tslint": "^5.8.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ppparihar/vse-hello.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ppparihar/vse-hello/issues"
+	},
+	"__metadata": {
+		"id": "d0e241b2-996d-4925-8e66-52b9101dbd7d",
+		"publisherId": "837b2939-3813-4e66-a4f8-9fffec5374fa",
+		"publisherDisplayName": "Prem Parihar",
+		"installedTimestamp": 1647138287848
+	}
+}
