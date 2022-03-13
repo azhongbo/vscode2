@@ -16,7 +16,6 @@ print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
-
 ### -------------------------------------------------------------------
 MyCodeTitle  = "RyanCode DOS ( 日期時間 )"
 MyCodeString = '''
