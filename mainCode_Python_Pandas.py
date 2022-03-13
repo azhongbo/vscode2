@@ -1,26 +1,5 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
 
 # ### -------------------------------------------------------------------
 # MyCodeTitle  = "RyanCode Python Pandas ( 範例 )"
@@ -30,7 +9,7 @@ MyCodeName = sys.argv[2]
 
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -41,7 +20,7 @@ MyCodeName = sys.argv[2]
 
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -52,7 +31,7 @@ MyCodeName = sys.argv[2]
 
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -78,7 +57,7 @@ df.apply( lambda e: e.max() - e.min() , axis=1 )  # 行 axis=0   列 axis=1
 df.applymap( lambda e: '-' if pandas.isnull(e) else e )  ## 將缺失值 Nan 換成 -
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -171,7 +150,7 @@ s1 = df1.loc['A'] # 顯示列資料
 s1 = df1.loc['A']
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -249,7 +228,7 @@ s2 + s3
 s2.add(s3,fill_value=0)
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -350,7 +329,7 @@ with lite.connect("test.sqlite") as con:
 
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -366,7 +345,7 @@ train['Sex_num'] = train.Sex.map({ 'female':0 , 'male':1 })
 #顯示 Sex, Sex_num
 train.loc[0:4 , ['Sex','Sex_num'] ]
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -376,7 +355,7 @@ MyCodeString = '''
 for index,row in df.iterrows():
     print( row['aa'] , row['bb'] )
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -416,7 +395,7 @@ weather_data = [
 ]
 df = pd.DataFrame(data=weather_data, columns=['day','temperature','windspeed','event'])
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -451,7 +430,7 @@ new_df = df.fillna({
         'col3': 'No Event'
     })
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -489,7 +468,7 @@ df2.columns = ['name', 'gender', 'age']
 
 df2.applymap(lambda e: '-' if pd.isnull(e) else e)  ## 如果空值，回傳 '-' 這個值
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -515,7 +494,7 @@ pd.merge( names , dep , on = 'id' , how='inner' ).fillna('') # 兩邊都有才�
 pd.merge( names , dep , on = 'id' , how='left'  ).fillna('') # 依照左邊
 pd.merge( names , dep , on = 'id' , how='right' ).fillna('') # 依照右邊
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -558,7 +537,7 @@ emp[ emp['title'].str.contains('主任|工程師') ]  ## like 搜尋
 emp[ emp['dep'].isin(['會計','人事']) ]          ## 一般搜尋
 emp[ emp['age'] < 35 ]                          ## 比對數值
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -591,7 +570,7 @@ df = pd.DataFrame({
 df[['a','b','c']] = df['address'].str.extract('(.+[市縣])(.+[區鎮鄉市])(.+[街路村])')  ##使用正規表示法分割
 ###############################
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -601,8 +580,3 @@ runAllData(MyCodeTitle,MyCodeString,MyCodeName)
 
 
 
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

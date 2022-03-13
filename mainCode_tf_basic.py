@@ -1,26 +1,5 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
 
 
 # ### -------------------------------------------------------------------
@@ -30,7 +9,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_tf_basic
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -40,7 +19,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_tf_basic
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -63,7 +42,7 @@ tf.enable_eager_execution()
 tfe = tf.contrib.eager
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -75,7 +54,7 @@ MyCodeString = '''
 A Neural Network Playground
 https://playground.tensorflow.org/
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -138,7 +117,7 @@ with tf.Session() as sess:
     print(sess.run("output:0", feed_dict={"input:0":[2.0]}))
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -178,7 +157,7 @@ def preprocess_to_data_file( all_Folders , ratio=0.8):
 image_path = ["./cat_dog/cat", "./cat_dog/dog"]
 preprocess_to_data_file(image_path, 0.8)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -205,7 +184,7 @@ for step in range(2001):
     batch_data   = train_dataset[offset1:offset2, :, :, :] ## 開始取得訓練資料
     batch_labels = train_labels[offset1:offset2, :]        ## 開始取得訓練 label 資料 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -234,7 +213,7 @@ with tf.Session() as sess:
     x_ = sess.run(x)    
     print('when x = {}, y have min value'.format(x_))    
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -259,7 +238,7 @@ with tf.Session() as sess:
     print('softmax with cross entropy is\\n {} \\n'.format(cost1_))
     print('mean square is\\n {} \\n'.format(cost2_))
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -309,7 +288,7 @@ with tf.Session() as sess:
     accuracy_ = sess.run(accuracy, feed_dict={x: mnist.test.images, y: mnist.test.labels})
     print('Testing...... accuracy is {}'.format(accuracy_))
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -317,8 +296,3 @@ runAllData(MyCodeTitle,MyCodeString,MyCodeName)
 
 
 
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

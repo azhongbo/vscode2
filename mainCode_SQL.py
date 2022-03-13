@@ -1,34 +1,36 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
 
 
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode SQL ( 範例 )"
+# MyCodeString = '''
+# ### file: mainCode_SQL
+# ###  SQL 範例程式 ####
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode SQL ( 範例 )"
+# MyCodeString = '''
+# ###  SQL 範例程式 ####
+# ### file: mainCode_SQL
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
 
 
 
 
 ### -------------------------------------------------------------------
-MyCodeTitle  = "RyanCode SQLLite ( Python 一般範例 )"
+MyCodeTitle  = "RyanCode SQL ( SQLITE for Python 一般範例 )"
 MyCodeString = '''
 ###  Python SQLite ####
+### file: mainCode_SQL
 conn = sqlite3.connect('data.sqlite3')
 cursor = conn.cursor()
 sql = """ REPLACE INTO main.table (id,date,source) VALUES (NULL,'%s','%s') """ %(today,source)
@@ -38,14 +40,15 @@ for row in cursor.execute( "SELECT * FROM main.table WHERE a='b'"):
     arr.append( str(row[0]) )
 conn.close()
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 ### -------------------------------------------------------------------
-MyCodeTitle  = "RyanCode SQLLite ( Python 迴圈檢查範例 )"
+MyCodeTitle  = "RyanCode SQL ( SQLITE for Python 迴圈檢查範例 )"
 MyCodeString = '''
 ###  SQLLite Python 範例程式 ####
+### file: mainCode_SQL
 import sqlite3,time
 def connect2SQL(sql,filename):    
     sqlFlag = True
@@ -62,14 +65,15 @@ def connect2SQL(sql,filename):
             time.sleep(1)
             sqlFlag = True  ## 若無法執行完，sqlFlag = True 繼續 while
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 ### -------------------------------------------------------------------
-MyCodeTitle  = "RyanCode SQLLite ( PHP )"
+MyCodeTitle  = "RyanCode SQL ( SQLITE for PHP )"
 MyCodeString = '''
 ###  PHP SQLite ####
+### file: mainCode_SQL
 function ext($uid)
 {
     $mydb = new PDO("sqlite:sqlite3/mydb.sqlite");
@@ -87,15 +91,16 @@ function ext($uid)
         }
 }
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 
 ### -------------------------------------------------------------------
-MyCodeTitle  = "RyanCode SQLLite ( 建立 table )"
+MyCodeTitle  = "RyanCode SQL ( SQLITE 建立 table )"
 MyCodeString = '''
 ### SQL 語法建立 SQL ###
+### file: mainCode_SQL
 CREATE TABLE main.chgData ( 
     id     INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , 
     ipaddr VARCHAR, 
@@ -104,15 +109,16 @@ CREATE TABLE main.chgData (
     UNIQUE (ipaddr, func)    
 )
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 
 ### -------------------------------------------------------------------
-MyCodeTitle  = "RyanCode MySQL ( 建立 table )"
+MyCodeTitle  = "RyanCode SQL ( MySQL 建立 table )"
 MyCodeString = '''
 ### MySQL 建立 table ###
+### file: mainCode_SQL
 CREATE TABLE test (
     id int(11) NOT NULL AUTO_INCREMENT,
     dt datetime DEFAULT NULL,
@@ -125,15 +131,16 @@ CREATE TABLE test (
     UNIQUE KEY name1 (name1,name2,name3)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 
 ### -------------------------------------------------------------------
-MyCodeTitle  = "RyanCode MySQL ( PHP )"
+MyCodeTitle  = "RyanCode SQL ( MySQL for PHP )"
 MyCodeString = '''
 ### MySQL for PHP ###
+### file: mainCode_SQL
 // CONNECT DB
 $servername = "localhost";
 $username   = "root";
@@ -167,15 +174,16 @@ if ($result->num_rows > 0)
 } 
 $conn->close();
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 
 ### -------------------------------------------------------------------
-MyCodeTitle  = "RyanCode PostgreSQL ( PHP )"
+MyCodeTitle  = "RyanCode SQL ( PostgreSQL for PHP )"
 MyCodeString = '''
 ### PostgreSQL for PHP ###
+### file: mainCode_SQL
 $host        = "host=127.0.0.1";
 $port        = "port=5432";
 $dbname      = "dbname=testDB";
@@ -241,14 +249,15 @@ while($row = pg_fetch_row($ret))
 
 pg_close($db);
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 ### -------------------------------------------------------------------
-MyCodeTitle  = "RyanCode PostgreSQL ( Python )"
+MyCodeTitle  = "RyanCode SQL ( PostgreSQL for Python )"
 MyCodeString = '''
 ### PostgreSQL for Python ###
+### file: mainCode_SQL
 import psycopg2
 import pandas as pd
 
@@ -284,38 +293,6 @@ data1 = pd.read_sql(sql, conn)
 
 conn.close()
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
-
-# ### -------------------------------------------------------------------
-# MyCodeTitle  = "RyanCode SQLLite ( 範例 )"
-# MyCodeString = '''
-# ###  JavaScript 範例程式 ####
-# xxxxxxxxxxxxxxxxxxxxxxxxxxx
-# '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
-
-
-
-# ### -------------------------------------------------------------------
-# MyCodeTitle  = "RyanCode SQLLite ( 範例 )"
-# MyCodeString = '''
-# ###  JavaScript 範例程式 ####
-# xxxxxxxxxxxxxxxxxxxxxxxxxxx
-# '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
-
-
-
-
-
-
-
-
-
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

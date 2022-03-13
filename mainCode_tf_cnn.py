@@ -1,26 +1,5 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
 
 
 # ### -------------------------------------------------------------------
@@ -30,7 +9,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_tf_cnn
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -40,7 +19,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_tf_cnn
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -50,7 +29,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_tf_cnn
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -254,7 +233,7 @@ with tf.Session() as sess:
     
     print('Done......')
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -399,7 +378,7 @@ with tf.Session() as sess:
     test_accuracy_ = sess.run(accuracy, feed_dict=feed_dict)
     print('Test accuracy: {}'.format(test_accuracy_))
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -536,7 +515,7 @@ with tf.Session() as sess:
     print('Test accuracy: {}'.format(test_accuracy_))
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -618,7 +597,7 @@ with tf.Session() as sess:
     test_accuracy_ = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0})    
     print('test accuracy {}'.format(test_accuracy_))
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -711,7 +690,7 @@ with tf.Session() as sess:
     test_accuracy_ = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0})    
     print('test accuracy {}'.format(test_accuracy_))
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -722,8 +701,3 @@ runAllData(MyCodeTitle,MyCodeString,MyCodeName)
 
 
 
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

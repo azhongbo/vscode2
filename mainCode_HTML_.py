@@ -1,26 +1,5 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
 
 
 ### -------------------------------------------------------------------
@@ -62,7 +41,7 @@ ffmpeg -i 00000.MTS.mp4 -vf scale=640:360 output_640.mp4 -hide_banner
 ## ffmpeg to mp3 ##
 ffmpeg -i 'aaa.wma' -acodec libmp3lame -ab 192k 'bbb.mp3'
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -84,7 +63,7 @@ MyCodeString = '''
 </BODY>
 </HTML> 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -1324,7 +1303,7 @@ body
     </tbody>
 </table>
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 ### -------------------------------------------------------------------
 MyCodeTitle  = "RyanCode HTML ( CSS範例 )"
@@ -1401,7 +1380,7 @@ MyCodeString = '''
 }
 </style>
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -1433,7 +1412,7 @@ MyCodeString = '''
 <!-- 隱藏的 iframe -->
 <iframe name="my_iframe" src="test2.php" style='display:none;' scrolling='no' frameborder=0 ></iframe>
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -1466,7 +1445,7 @@ MyCodeString = '''
 	</tbody>
 </table>
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -1497,7 +1476,7 @@ MyCodeString = '''
 
 </style>
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -1541,7 +1520,7 @@ _:-ms-fullscreen, :root
 
 <font id="css-test">1234</font>
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -1551,7 +1530,7 @@ runAllData(MyCodeTitle,MyCodeString,MyCodeName)
 # <!-- file: mainCode_HTML_ -->
 # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -1561,15 +1540,10 @@ runAllData(MyCodeTitle,MyCodeString,MyCodeName)
 # <!-- file: mainCode_HTML_ -->
 # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 
 
 
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

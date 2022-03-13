@@ -1,26 +1,5 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
 
 
 # ### -------------------------------------------------------------------
@@ -30,7 +9,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_tf2_basic
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -40,7 +19,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_tf2_basic
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -50,7 +29,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_tf2_basic
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -122,7 +101,7 @@ model.compile(
 model.fit(x_train, y_train, batch_size=64, epochs=10, verbose=2)
 model.evaluate(x_test, y_test, batch_size=64, verbose=2)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -181,7 +160,7 @@ model.compile(
 model.fit(x_train, y_train, batch_size=32, epochs=5, verbose=2)
 model.evaluate(x_test,y_test, batch_size=32, verbose=2)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -208,7 +187,7 @@ myShow(x1,y1)
 # myShow(x2,np.reshape(y2,[-1]))
 # myShow(x3,np.reshape(y3,[-1]))
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -249,7 +228,7 @@ def solve_cudnn_error():
             print(e)
 solve_cudnn_error()
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -294,7 +273,7 @@ cpu_time = timeit.timeit(cpu_run, number=10)
 gpu_time = timeit.timeit(gpu_run, number=10)
 print('Run1: ', cpu_time, gpu_time , cpu_time/gpu_time )
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -338,15 +317,10 @@ predictions[0]
 np.argmax(predictions[0]) # 9
 test_labels[0] # 9
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 
 
 
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

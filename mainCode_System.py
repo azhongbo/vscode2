@@ -1,26 +1,5 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
 
 
 
@@ -31,7 +10,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_System
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -41,7 +20,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_System
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -103,7 +82,7 @@ sudo /usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
 # Windows 使用管理者權限執行 certutil.exe -addstore root xxx.crt
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -125,7 +104,7 @@ source activate myEnvName
 conda list   # list安裝套件
 conda install numpy pandas tensorflow-gpu==1.15 jupyter
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -169,7 +148,7 @@ KERNEL=="kvm", GROUP="kvm", MODE="0666"
 ## 開始運行 , 移除 CDROM
 ./x86_64-softmmu/qemu-system-x86_64 -boot c -enable-kvm -smp 2 -device virtio-vga,virgl=on  -net nic -net user,hostfwd=tcp::5555-:22 -cpu host -soundhw es1370 -m 4096 -display sdl,gl=on -hda Android9.img
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -220,7 +199,7 @@ tesseract --version
 ## 顯示辨識語言
 tesseract --list-langs
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -379,7 +358,7 @@ xrandr --output DVI-D-0 --primary
 xrandr --output HDMI-1  --off
 xrandr --output DVI-D-0 --mode 1280x960
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -466,7 +445,7 @@ if _platform == "linux" or _platform == "linux2":
     #speech_cht()  ## 中文播放器
     speech_other() ## 其他語言播放器
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -589,7 +568,7 @@ def getCommend2(value1,value2):
 #               ["02:34:43" , "02:44:28"]] , ['../video/','TensorFlow-Day3.mp4','CNN-Introduction']  )
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -624,7 +603,7 @@ netsh firewall delete portopening TCP 445
 netsh firewall add portopening TCP 139 P139 ENABLE custom 192.168.0.1,192.168.0.13
 netsh firewall add portopening TCP 445 P445 ENABLE custom 192.168.0.1,192.168.0.13
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -641,7 +620,7 @@ MyCodeString = '''
 
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -655,7 +634,7 @@ find /Projects/ -name '*.exe' | cpio -pdm /home/ubuntu/Downloads/
 
 find ./ -name '*.ipynb' -exec cp "{}" /home/ubuntu/Documents/  \;
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -669,7 +648,7 @@ ubuntu nautilus寫入sh路徑: ~/.local/share/nautilus/scripts
 mate 寫入sh路徑: ~/.config/caja/scripts
 sshpass -p Win3975999 ssh -X user@192.168.0.1 thunderbird
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -686,7 +665,7 @@ MyCodeString = '''
 /usr/share/applications
 /usr/share/fonts
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -710,7 +689,7 @@ mkdir -p /raiddisk1
 mount /dev/md0 /raiddisk1
 chown -R ubuntu-mate:ubuntu-mate /raiddisk1
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -723,7 +702,7 @@ visudo
 ## 最後一行加入
 user ALL=(ALL) NOPASSWD:ALL
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -747,7 +726,7 @@ vino-preferences
 ./vino-server > /dev/null &
 ./vino-server --display=:0 > /dev/null &
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -786,7 +765,7 @@ iptables -A INPUT -i enx00e04c360317 -s 192.168.0.20/32 -j ACCEPT
 ## Block from interface
 iptables -A INPUT -i enx00e04c360317 -j DROP
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -877,7 +856,7 @@ iptables -t nat -A POSTROUTING -p tcp --dport 80 --dst 192.168.1.10 -j MASQUERAD
 ## save rule
 iptables-save > /etc/network/iptables.rules
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -907,7 +886,7 @@ sudo apt install mysql-client mysql-server mysql-workbench
 
 安裝完成以後直接打開Mysql Workbench，點擊「Localhost Instance 3306」 就可以連接了，不再做任何配置。
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -957,7 +936,7 @@ vi /etc/postgresql/10/main/pg_hba.conf
 host    all             all             192.168.5.0/24          md5
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -970,7 +949,7 @@ timedatectl list-timezones
 timedatectl set-timezone Asia/Taipei
 timedatectl
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -991,7 +970,7 @@ ssh -gD 3128 127.0.0.1
 ssh -gL 8080:localhost:80 root@127.0.0.1
 ssh -gR 6666:localhost:8080 root@127.0.0.1
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -1039,7 +1018,7 @@ systemctl daemon-reload
 systemctl restart docker
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -1061,7 +1040,7 @@ gsettings set org.gnome.nautilus.preferences executable-text-activation "ask"
 gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -1170,7 +1149,7 @@ MyCodeString = '''
 98
 99
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -1178,8 +1157,3 @@ runAllData(MyCodeTitle,MyCodeString,MyCodeName)
 
 
 
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

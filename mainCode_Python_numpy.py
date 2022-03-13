@@ -1,26 +1,5 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
 
 
 # ### -------------------------------------------------------------------
@@ -30,7 +9,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_Python_numpy
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -40,7 +19,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_Python_numpy
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -50,7 +29,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_Python_numpy
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 # ### -------------------------------------------------------------------
@@ -60,7 +39,7 @@ MyCodeName = sys.argv[2]
 # ### file: mainCode_Python_numpy
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -80,7 +59,7 @@ np.concatenate([nd1,nd2],axis = 0) ## 使用 np.concatenate() 垂直合併
 nd5 = np.hstack((nd1,nd3))         ## 使用 np.hstack() 水平的列數增加
 nd4 = np.vstack((nd1,nd2))         ## 使用 np.vstack() 垂直行數增多
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -116,7 +95,7 @@ plt.imshow(cat9)
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxx
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -136,7 +115,7 @@ plt.imshow( cat_data[::-1] ) #反轉
 plt.imshow( cat_data[::-15,::-15] ) #馬賽克
 plt.imshow( np.transpose(cat_data,axes = (1,0,2))  )  # 向左邊轉，行列调整 -- 高度 0、宽度 1、像素 2
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -158,7 +137,7 @@ Image.fromarray( cat_data[:,:,[1,0,2]]  ) ## 轉綠色
 Image.fromarray( cat_data[:,:,0]        ) ## 轉灰階
 Image.fromarray( cat_data[::5,::5]      ) ## resize
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -227,7 +206,7 @@ nd[0:3,0:3] ## 取 0~3 x 0~3 的資料
 nd[::-1]    ## 反轉
 nd[::2]     ## 兩個進行切片
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -242,8 +221,3 @@ runAllData(MyCodeTitle,MyCodeString,MyCodeName)
 
 
 
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################

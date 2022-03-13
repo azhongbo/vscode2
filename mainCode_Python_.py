@@ -1,26 +1,5 @@
 #!/usr/bin/python3
 import sys
-from __save__ import *
-
-########################################################
-def runAllData(MyCodeTitle,MyCodeString,MyCodeName):
-    global package1,package2,extension,count
-
-    count = count + 1    
-
-    (data1,data2,data3) = makeCode(MyCodeTitle,MyCodeString,MyCodeName+str(count))
-
-    package1  = package1  + data1
-    package2  = package2  + data2
-    extension = extension + data3
-########################################################
-
-
-package1   = ""
-package2   = ""
-extension  = ""
-count      = 0
-MyCodeName = sys.argv[2]
 
 
 ### -------------------------------------------------------------------
@@ -31,7 +10,7 @@ MyCodeName = sys.argv[2]
 #  -*-  coding:utf-8  -*-
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -42,7 +21,7 @@ MyCodeName = sys.argv[2]
 #  -*-  coding:utf-8  -*-
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -53,7 +32,7 @@ MyCodeName = sys.argv[2]
 #  -*-  coding:utf-8  -*-
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -64,7 +43,7 @@ MyCodeName = sys.argv[2]
 #  -*-  coding:utf-8  -*-
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 # '''
-# runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -82,7 +61,7 @@ set CL=-FI"C:\Program Files (x86)\Microsoft Visual Studio\2017\WDExpress\VC\Tool
 
 C:\Program Files (x86)\Microsoft Visual Studio\2017\WDExpress\VC\Auxiliary\Build\vcvarsall.bat
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -132,7 +111,7 @@ exit
 """
 layButton(id,xx,yy,actionText,runCommand)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -159,7 +138,7 @@ fp = open(extensionFile,'w')
 fp.write(data2)
 fp.close
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -218,7 +197,7 @@ print(sp.returncode)
 return_code = subprocess.call("ls /tmp", shell=True)  
 print(return_code)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -345,7 +324,7 @@ while(alldata):
 
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -393,7 +372,7 @@ exit
 """
 layButton(id,xx,yy,actionText,runCommand)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -406,7 +385,7 @@ MyCodeString = '''
 #  -*-  coding:utf-8  -*-
 os.system("iconv -f big5 -t utf-8 qqqqq.html -o vvvvv.html")
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -424,7 +403,7 @@ variable1 = sys.argv[1]   ## 第 1 個變數
 variable2 = sys.argv[2]   ## 第 2 個變數
 variable3 = sys.argv[3]   ## 第 3 個變數
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
@@ -445,7 +424,7 @@ for key,values in  dict.items():
     print (key,values)
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -480,7 +459,7 @@ def aes_decrypt(data, key):
     return cryptor.decrypt(data)
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -553,7 +532,7 @@ print userdict['site']['board']['username']
 print userdict['par']['chl']['username']
 
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ## -------------------------------------------------------------------
@@ -588,7 +567,7 @@ child/test.py      ## child 套件裡面的模組
 import child
 print( child.test.hello("David")  )
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -620,7 +599,7 @@ acct1 = Account("123–456–789", "Justin") #開一個帳戶acct1.deposit(100)
 acct1.withdraw(30)
 print(acct1.balance) #餘額是 70
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -654,7 +633,7 @@ except:
     print(' * already has an instance, so exit.')
     exit(0)
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -687,7 +666,7 @@ def ldap_auth(username, password):
 if __name__ == "__main__":
     ldap_auth("username", "password")
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
@@ -711,7 +690,7 @@ for w in words:
         else:
             dic[w] = dic[w] + 1
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ## -------------------------------------------------------------------
@@ -745,14 +724,9 @@ matplotlib plotly
 opencv-python
 lxml requests beautifulsoup4 pandas numpy xlrd pyautogui  pygame
 '''
-runAllData(MyCodeTitle,MyCodeString,MyCodeName)
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
 
 
-##### 這是輸出 ######################################
-if sys.argv[1] == "package1":     print(package1)
-if sys.argv[1] == "package2":     print(package2)
-if sys.argv[1] == "extension":    print(extension)
-##### END 這是輸出 ##################################
