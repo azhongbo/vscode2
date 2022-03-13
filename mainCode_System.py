@@ -23,6 +23,191 @@ import sys
 # print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode System ( 範例 )"
+# MyCodeString = '''
+# ###  System 範例程式 ####
+# ### file: mainCode_System
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode System ( 範例 )"
+# MyCodeString = '''
+# ###  System 範例程式 ####
+# ### file: mainCode_System
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+### -------------------------------------------------------------------
+MyCodeTitle  = "RyanCode System ( HTTPS SSL 憑證 )"
+MyCodeString = '''
+###  System HTTPS SSL 憑證 ####
+### file: mainCode_System
+## 產生憑證 ##
+openssl req -x509 -new -nodes -sha256 -utf8 -days 3650 -newkey rsa:2048 -keyout cert.key -out cert.crt -config ssl.conf
+
+## 基本設定檔 ssl.conf##
+[req]
+prompt = no
+default_md = sha256
+default_bits = 2048
+distinguished_name = dn
+x509_extensions = v3_req
+
+[dn]
+C = TW
+ST = Taiwan
+L = Taipei
+O = MyCompanyName
+OU = MIS Department
+emailAddress = admin@mycompany.com
+CN = test.mycompany.com
+
+[v3_req]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = test.mycompany.com
+IP.1 = 192.168.1.10
+
+'''
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+
+
+
+### -------------------------------------------------------------------
+MyCodeTitle  = "RyanCode System ( jitsi Meeting 安裝 @Ubuntu )"
+MyCodeString = '''
+###  System jitsi Meeting 安裝 @Ubuntu ####
+### file: mainCode_System
+# 參考網址： https://www.vultr.com/docs/how-to-install-jitsi-meet-on-ubuntu-18-04-lts
+# 設定電腦名稱
+sudo hostnamectl set-hostname MyHostName
+sudo sed -i 's/^127.0.1.1.*$/127.0.1.1 MyHostName.abc.com MyHostName/g' /etc/hosts
+# 開啟防火牆
+sudo ufw allow OpenSSH
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw allow in 10000:20000/udp
+sudo ufw allow samba
+sudo ufw enable
+# 安裝相關套件
+sudo apt update
+sudo apt upgrade -y &amp;&amp; sudo shutdown -r now
+sudo apt install -y gnupg
+sudo apt install -y openjdk-8-jre-headless
+echo "JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")" | sudo tee -a /etc/profile
+source /etc/profile
+sudo apt install -y nginx
+sudo systemctl start nginx.service
+sudo systemctl enable nginx.service
+https_proxy=http://xx.xx.xx.xx:8000 wget -qO - https://download.jitsi.org/jitsi-key.gpg.key | sudo apt-key add -
+sudo sh -c "echo 'deb https://download.jitsi.org stable/' > /etc/apt/sources.list.d/jitsi-stable.list"
+sudo apt update -y
+# 安裝 Jitsi Server (最新版本)
+sudo apt-get install  jitsi-meet
+# 安裝 Jitsi Server (2.0.51 版本)
+sudo apt-get install jitsi-meet=2.0.5142-1 jitsi-videobridge2=2.1-376-g9f12bfe2-1  jicofo=1.0-644-1 jitsi-meet-web=1.0.4466-1 jitsi-meet-web-config=1.0.4466-1 jitsi-meet-prosody=1.0.4466-1 jitsi-meet-turnserver=1.0.4466-1
+# 出現下列訊息，輸入網址 MyHostName.abc.com
+# The value for the hostname that is set in Jitsi Videobridge installation.  │ 
+# The hostname of the current installation:  
+# 執行 cert 輸入管理者 Email
+sudo /usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
+## keyin admin@abc.com
+# 臨時加入憑證方式
+# 檔案位置 /etc/jitsi/meet/xxx.crt
+# Windows 使用管理者權限執行 certutil.exe -addstore root xxx.crt
+'''
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+### -------------------------------------------------------------------
+MyCodeTitle  = "RyanCode System ( Ubuntu ufw 設定 )"
+MyCodeString = '''
+###  System Ubuntu ufw 設定 ####
+### file: mainCode_System
+
+#!/bin/bash
+
+## 參考資料  https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
+
+echo y | ufw reset           ## 清空設定
+ufw default deny incoming    ## 阻擋進入
+ufw default allow outgoing   ## 允許出去
+
+## 範例1
+ufw allow http
+ufw allow https
+ufw allow in 10000:20000/udp
+
+## 範例2
+ufw allow from 192.168.1.5 to any port 22
+ufw allow from 192.168.1.5 to any port 5432
+ufw allow from 192.168.1.5 to any port 9000
+
+## 範例3
+# ufw allow OpenSSH
+# ufw allow 6000:6007/tcp
+# ufw allow from 192.168.1.5 to any port 22
+# ufw allow from 192.168.1.0/24
+# ufw allow from 192.168.1.0/24 to any port 22
+# ufw allow in on eth1 to any port 3306
+# ufw allow in on eth0 to any port 80
+
+# ufw app list
+# ufw show added
+# ufw deny http
+# ufw status numbered
+
+ufw enable
+
+#### ufw for docker (Ubuntu) ####
+
+## 參考 https://blog.36web.rocks/2016/07/08/docker-behind-ufw.html
+
+## ufw 加入 2375
+ufw allow 2375/tcp
+ufw reload
+
+vi /etc/default/ufw
+DEFAULT_FORWARD_POLICY="ACCEPT"   ##  DROP 改為 ACCEPT
+
+vi /etc/default/docker
+DOCKER_OPTS="--iptables=false"   # 在 DOCKER_OPTS 加上 --iptables=false
+
+vi /etc/systemd/system/docker.service.d/behind-ufw.conf  ## 加入下面 service
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd --iptables=false -H fd://
+
+vi /etc/ufw/before.rules
+ ## 找到 *filter ，並在前面加入下列
+*nat
+:POSTROUTING ACCEPT [0:0]
+-A POSTROUTING ! -o docker0 -s 172.17.0.0/16 -j MASQUERADE
+COMMIT
+
+## 重新啟動 docker
+service docker restart
+systemctl daemon-reload
+systemctl restart docker.service
+
+## 重新開機
+'''
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+
+
+
+
 ### -------------------------------------------------------------------
 MyCodeTitle  = "RyanCode System ( Ubuntu Jitsi Server )"
 MyCodeString = '''
