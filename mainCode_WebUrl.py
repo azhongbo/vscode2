@@ -1,6 +1,37 @@
 #!/usr/bin/python3
 import sys
 
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode WebUrl ( 範例 )"
+# MyCodeString = '''
+# :: ###  WebUrl 範例 範例程式 ####
+# :: ### 檔案: mainCode_WebUrl
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode WebUrl ( 範例 )"
+# MyCodeString = '''
+# :: ###  WebUrl 範例 範例程式 ####
+# :: ### 檔案: mainCode_WebUrl
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode WebUrl ( 範例 )"
+# MyCodeString = '''
+# :: ###  WebUrl 範例 範例程式 ####
+# :: ### 檔案: mainCode_WebUrl
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+
 
 ### -------------------------------------------------------------------
 MyCodeTitle  = "RyanCode WebUrl ( Docker url )"

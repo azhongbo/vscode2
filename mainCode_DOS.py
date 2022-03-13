@@ -1,10 +1,55 @@
 #!/usr/bin/python3
 import sys
 
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode DOS ( 範例 )"
+# MyCodeString = '''
+# :: ###  DOS 範例 範例程式 ####
+# :: ### 檔案: mainCode_DOS
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode DOS ( 範例 )"
+# MyCodeString = '''
+# :: ###  DOS 範例 範例程式 ####
+# :: ### 檔案: mainCode_DOS
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode DOS ( 範例 )"
+# MyCodeString = '''
+# :: ###  DOS 範例 範例程式 ####
+# :: ### 檔案: mainCode_DOS
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode DOS ( 範例 )"
+# MyCodeString = '''
+# :: ###  DOS 範例 範例程式 ####
+# :: ### 檔案: mainCode_DOS
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+
+
+
 ### -------------------------------------------------------------------
 MyCodeTitle  = "RyanCode DOS ( 命令提示輸入 )"
 MyCodeString = '''
 :: ### 命令提示輸入 ##
+:: ### 檔案: mainCode_DOS
+
 ECHO 電腦名稱
 SET /P myhost= # 
 ECHO 輸入帳號
@@ -20,6 +65,8 @@ print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 MyCodeTitle  = "RyanCode DOS ( 日期時間 )"
 MyCodeString = '''
 :: ### 日期-時間 ##
+:: ### 檔案: mainCode_DOS
+
 %date:~-13,4%-%date:~-8,2%-%date:~-5,2% %time:~-11,8%
 '''
 print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
@@ -31,6 +78,8 @@ print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 MyCodeTitle  = "RyanCode DOS ( 副程式 )"
 MyCodeString = '''
 :: ### DOS Function 副程式 ##
+:: ### 檔案: mainCode_DOS
+
 call:myDosFunc 100 YeePEE
 call:myDosFunc 100,for me
 echo.&pause&goto:eof
@@ -47,6 +96,8 @@ print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 MyCodeTitle  = "RyanCode DOS ( 亂數暫停 )"
 MyCodeString = '''
 :: ### 亂數暫停 ##
+:: ### 檔案: mainCode_DOS
+
 set /a num=%random% %%10 +1
 ping -n %num% 127.0.0.1 > NUL
 '''
@@ -58,6 +109,8 @@ print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 MyCodeTitle  = "RyanCode DOS ( ping 主機返回結果 )"
 MyCodeString = '''
 :: ###  DOS ping 主機返回結果  ####
+:: ### 檔案: mainCode_DOS
+
 set ip=%1
 ping -n 1 %ip% | find "TTL"
 if not errorlevel 1 set error=win
