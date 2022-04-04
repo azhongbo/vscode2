@@ -8,7 +8,6 @@ package_json = getSample("sample_package.json")       ## 讀取範本檔案，�
 extension_js = getSample("sample_extension.js")       ## 讀取範本檔案，最後位置 %HOME%/.vscode/extensions/ryanCode/out/extension.js
 dataArr      = getAll_mainCode().split(",,,,,,,,,,")  ## 讀取 所有 mainCode_*.py 檔案至 dataArr[]
 
-
 codeID = ""
 for i in range(len(dataArr)-1):
     if i%2 == 0:
