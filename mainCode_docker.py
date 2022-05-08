@@ -11,6 +11,120 @@ import sys
 # print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode Docker ( 範例 )"
+# MyCodeString = '''
+# ###  Docker 範例程式 ####
+# ## 檔案: mainCode_docker
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode Docker ( 範例 )"
+# MyCodeString = '''
+# ###  Docker 範例程式 ####
+# ## 檔案: mainCode_docker
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+### -------------------------------------------------------------------
+MyCodeTitle  = "RyanCode Docker ( nginx uwsgi flask )"
+MyCodeString = '''
+###  Docker nginx uwsgi flask ####
+## 檔案: mainCode_docker
+
+### docker-compose.yml ###############
+services:
+  flask:
+    build: ./flask
+    container_name: flask
+    restart: always
+    volumes:
+      - ./flask:/app
+    environment:
+      - APP_NAME=FlaskApp
+    expose:
+      - 8080
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - "./nginx/logs:/var/log/nginx"
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+
+    depends_on:
+      - flask
+
+
+### ./flask/Dockerfile ###
+FROM python:3.7.2-stretch
+WORKDIR /app
+ADD . /app
+RUN pip install --upgrade pip
+RUN pip install flask uwsgi requests
+CMD ["uwsgi", "wsgi.ini"]
+
+
+### ./flask/main.py ###
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello World!"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+### ./flask/wsgi.ini ###
+[uwsgi]
+wsgi-file = main.py
+callable = app
+socket = :8080
+processes = 4
+threads = 2
+master = true
+chmod-socket = 660
+vacuum = true
+die-on-term = true
+
+
+### ./nginx/Dockerfile #####
+# Use the Nginx image
+FROM nginx
+
+# Remove the default nginx.conf
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Replace with our own nginx.conf
+COPY nginx.conf /etc/nginx/conf.d/
+
+
+### ./nginx/nginx.conf #####
+server {
+    listen 80;
+    # server_name 0.0.0.0; 
+    location / {
+        include uwsgi_params;
+        uwsgi_pass flask:8080;
+    }
+}
+
+
+'''
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+
+
 ### -------------------------------------------------------------------
 MyCodeTitle  = "RyanCode Docker ( ubuntu nginx uwsgi flask )"
 MyCodeString = '''
