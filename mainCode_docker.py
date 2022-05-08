@@ -11,14 +11,109 @@ import sys
 # print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
-# ### -------------------------------------------------------------------
-# MyCodeTitle  = "RyanCode Docker ( 範例 )"
-# MyCodeString = '''
-# ###  Docker 範例程式 ####
-# ## 檔案: mainCode_docker
-# xxxxxxxxxxxxxxxxxxxxxxxxxxx
-# '''
-# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+### -------------------------------------------------------------------
+MyCodeTitle  = "RyanCode Docker ( ubuntu nginx uwsgi flask )"
+MyCodeString = '''
+###  Docker ubuntu nginx uwsgi flask ####
+## 檔案: mainCode_docker
+
+### Dockerfile ###############
+FROM ubuntu
+
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
+RUN ln -sf /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
+RUN echo "Asia/Taipei" > /etc/timezone
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+RUN echo "Asia/Taipei" > /etc/timezone
+
+RUN apt-get -y install nginx
+
+RUN mkdir /app
+WORKDIR /app
+COPY default   /etc/nginx/sites-available/
+COPY main.py   /app
+COPY wsgi.ini  /app
+COPY startHttp /app
+
+RUN apt-get -y install python3 python3-pip python3-tk python3-dev scrot libpq-dev iftop ufw
+
+RUN pip install --upgrade pip
+RUN python3 -m pip install flask requests psycopg2 uwsgi ldap3
+# CMD ["uwsgi", "--ini wsgi.ini"]
+
+# docker build -t ubuntuflask .
+
+
+### main.py ###############
+#!/usr/bin/python3
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello World!"
+
+if __name__ == '__main__':
+    app.run()
+
+
+### wsgi.ini ###############
+[uwsgi]
+wsgi-file = main.py
+callable = app
+
+### 使用 http 協議 ###
+# http= :8001   
+
+### 使用 uwsgi 協議 ###
+socket = :8001
+
+processes = 4
+threads = 2
+master = true
+chmod-socket = 660
+vacuum = true
+die-on-term = true    
+
+### default ###############
+server{
+    listen  80;
+    location /{
+        ## 使用 http 協議
+        # proxy_pass  http://127.0.0.1:8001;
+
+        ## 用 uwsgi 協議
+        include uwsgi_params;
+        uwsgi_pass 127.0.0.1:8001;
+    }
+}
+
+### startHttp ###############
+#!/bin/bash
+service nginx restart
+uwsgi --ini wsgi.ini
+
+### docker-compose.yml ###############
+services:
+  web:
+    image: ubuntuflask
+    container_name: ubuntuflask
+    restart: always
+    volumes:
+      - ./nginx:/app
+      - ./nginx/logs:/var/log/nginx
+    environment:
+      - APP_NAME=FlaskApp
+    ports:
+      - "80:80"
+    command: /app/startHttp
+
+# nikto -h 192.168.5.111  ## web scan
+
+'''
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
