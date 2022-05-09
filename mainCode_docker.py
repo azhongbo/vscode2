@@ -628,6 +628,34 @@ apachectl -D FOREGROUND
 docker build -t UbuntuPHP74 .
 docker run -it --rm UbuntuPHP74 bash
 docker run -dit --rm -p 80:80 -v /usr/local/docker/UbuntuPHP74/html:/var/www/html --name php UbuntuPHP74 startHttp
+
+### with nginx + php
+# apt install -y nginx php7.4 php7.4-fpm php7.4-cgi php7.4-common
+# vi /etc/nginx/sites-available/default
+
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+    index index.php index.html index.htm index.nginx-debian.html;	
+	server_name _;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+	#	# With php-fpm (or other unix sockets):
+		fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+	#	# With php-cgi (or other tcp sockets):
+	#	fastcgi_pass 127.0.0.1:9000;
+	}
+	location ~ /\.ht {
+		deny all;
+	}
+}
+
 '''
 print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
