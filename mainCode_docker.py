@@ -118,6 +118,97 @@ server {
     }
 }
 
+########################################
+### HTTPS ##############################
+########################################
+
+### docker-compose.yml ###############
+services:
+  flask:
+    build: ./flask
+    container_name: flask
+    restart: always
+    volumes:
+      - ./flask:/app
+    environment:
+      - APP_NAME=FlaskApp
+    expose:
+      - 8080
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/ssl:/etc/nginx/ssl
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - flask
+
+
+### ./nginx/Dockerfile #####
+# Use the Nginx image
+FROM nginx
+
+# Remove the default nginx.conf
+RUN mkdir /etc/nginx/ssl
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Replace with our own nginx.conf
+COPY nginx.conf /etc/nginx/conf.d/
+
+### ./nginx/nginx.conf #####
+server {
+    listen 80;
+    # server_name 0.0.0.0; 
+    location / {
+        include uwsgi_params;
+        uwsgi_pass flask:8080;
+    }
+}
+
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  rewrite ^(.*) https://$host$1 permanent;
+  # server_name 0.0.0.0; 
+  # location / {
+  #     include uwsgi_params;
+  #     uwsgi_pass flask:8080;
+  # }
+}
+
+server {
+  listen 443 ssl default_server;
+  listen [::]:443 ssl default_server;
+
+  ssl_certificate /etc/nginx/ssl/cert.crt;
+  ssl_certificate_key /etc/nginx/ssl/cert.key;
+
+   # server_name 0.0.0.0; 
+  location / {
+      include uwsgi_params;
+      uwsgi_pass flask:8080;
+  }
+}
+
++---nginx
+|   |   Dockerfile
+|   |   nginx.conf
+|   |   
+|   +---ssl
+|       |   cert.crt
+|       |   cert.key
+|
++---flask
+|   |   Dockerfile
+|   |   main.py
+|   |   wsgi.ini
+|
+|   docker-compose.yml
 
 '''
 print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
