@@ -21,14 +21,142 @@ import sys
 # print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
-# ### -------------------------------------------------------------------
-# MyCodeTitle  = "RyanCode Docker ( 範例 )"
-# MyCodeString = '''
-# ###  Docker 範例程式 ####
-# ## 檔案: mainCode_docker
-# xxxxxxxxxxxxxxxxxxxxxxxxxxx
-# '''
-# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+### -------------------------------------------------------------------
+MyCodeTitle  = "RyanCode Docker ( unit php )"
+MyCodeString = '''
+###  Docker unit php ####
+## 檔案: mainCode_docker
+
+## 官方網址  https://unit.nginx.org/installation/
+
+### 使用 ubuntu 安裝方式 ############################################
+
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
+ln -sf /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
+echo "Asia/Taipei" > /etc/timezone
+dpkg-reconfigure --frontend noninteractive tzdata
+echo "Asia/Taipei" > /etc/timezone
+
+apt-get install tzdata
+dpkg-reconfigure tzdata
+
+apt-get install vim systemd iftop net-tools nmon ufw curl wget
+
+curl --output /usr/share/keyrings/nginx-keyring.gpg https://unit.nginx.org/keys/nginx-keyring.gpg
+
+vi /etc/apt/sources.list.d/unit.list
+deb [signed-by=/usr/share/keyrings/nginx-keyring.gpg] https://packages.nginx.org/unit/ubuntu/ focal unit
+deb-src [signed-by=/usr/share/keyrings/nginx-keyring.gpg] https://packages.nginx.org/unit/ubuntu/ focal unit
+
+wget http://launchpadlibrarian.net/398247488/perl-base_5.26.1-6ubuntu0.3_amd64.deb
+sudo dpkg -i perl-base_5.26.1-6ubuntu0.3_amd64.deb
+
+apt update
+apt install unit
+apt install unit-dev unit-go unit-jsc11 unit-perl unit-php unit-python2.7 unit-python3.8 unit-ruby
+systemctl restart unit 
+
+apt-get update
+apt-get install unit
+apt-get install -y -qq --no-install-recommends certbot ghostscript nginx \
+php-bcmath php-cli php-common php-curl php-gd php-imagick php-mbstring php-mysql php-opcache \
+php-xml php-zip python3-certbot-nginx unit unit-dev unit-go unit-jsc11 unit-perl unit-php \
+unit-python2.7 unit-python3.8 unit-ruby
+systemctl restart unit
+
+docker commit containersId imageName
+
+### 使用官方 docker images 方式 ###################################
+
+## 搜尋 nginx/unit 版本
+imageName=nginx/unit
+wget -q https://registry.hub.docker.com/v1/repositories/$imageName/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}'
+
+# 搜尋到以下版本，使用最後一個
+## docker pull docker.io/nginx/unit:1.14.0-php7.3
+## docker pull docker.io/nginx/unit:1.15.0-php7.3
+## docker pull docker.io/nginx/unit:1.16.0-php7.3
+## docker pull docker.io/nginx/unit:1.17.0-php7.3
+## docker pull docker.io/nginx/unit:1.18.0-php7.3
+## docker pull docker.io/nginx/unit:1.19.0-php7.3
+## docker pull docker.io/nginx/unit:1.20.0-php7.3
+docker pull docker.io/nginx/unit:1.21.0-php7.3
+
+## 封裝 Containers
+docker commit \
+    --author "xxx@gmail.com" \
+    --message "test" \
+    e23743a1603f \
+    myImageName:v1
+
+docker commit e23743a1603f unit2:v2
+
+## 啟動
+docker run -it -p 80:80 \
+-v /home/klcppp/ubuntu/app:/app \
+-v /home/klcppp/ubuntu/app/unit:/etc/unit \
+nginx/unit:1.21.0-php7.3 bash
+
+## 編輯設定檔案
+vi /etc/unit/start.json
+{
+    "listeners": 
+    {
+        "*:8081": 
+        {
+            "application": "infopage"
+        },
+        "*:8082": 
+        {
+            "application": "hellopage"
+        }
+    },
+    "applications": 
+    {
+        "infopage": 
+        {
+            "type": "php",
+            "processes": 2,
+            "root": "/app/html",
+            "index": "info.php"
+        },
+        "hellopage": 
+        {
+            "type": "php",
+            "processes": 2,
+            "root": "/app/html",
+            "index": "hello.php"
+        }
+    }
+}
+
+curl -X PUT -d @start.json --unix-socket /var/run/control.unit.sock http://localhost/config/
+
+## Web測試: wrk 測試效能 ## 
+## wrk 是用C語言寫的http benchmark 工具，是一種簡易的HTTP 性能測試。
+
+## 安裝
+sudo apt-get install build-essential libssl-dev git -y
+git clone https://github.com/wg/wrk.git wrk
+cd wrk
+sudo make
+sudo cp wrk /usr/local/bin
+
+## -t12 用 12 個線程 # -c400 模擬 400 個併發連接 # -d30s 持續 30 秒
+wrk -t12 -c400 -d30s http://127.0.0.1:8081/
+
+## Web測試: nikto 檢查網頁伺服器全問題的工具 ## 
+git clone https://github.com/sullo/nikto
+
+# Main script is in program/
+cd nikto/program
+
+# Run using the shebang interpreter
+./nikto.pl -h http://www.example.com
+'''
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------
