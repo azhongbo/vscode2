@@ -33,14 +33,22 @@ import sys
 # print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
-# ### -------------------------------------------------------------------
-# MyCodeTitle  = "RyanCode System ( 範例 )"
-# MyCodeString = '''
-# ###  System 範例程式 ####
-# ### file: mainCode_System
-# xxxxxxxxxxxxxxxxxxxxxxxxxxx
-# '''
-# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+### -------------------------------------------------------------------
+MyCodeTitle  = "RyanCode System ( file changed 檔案異動檢查 )"
+MyCodeString = '''
+###  System 檔案異動檢查 ####
+### file: mainCode_System
+#!/bin/bash
+previous="$(stat *)"
+while sleep 3; do
+    current="$(stat *)"
+    if  [[ $current != $previous ]]; then
+        echo "Some files changed."
+    fi
+    previous=$current
+done
+'''
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 ### -------------------------------------------------------------------

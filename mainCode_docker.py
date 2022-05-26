@@ -21,6 +21,31 @@ import sys
 # print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
+# ### -------------------------------------------------------------------
+# MyCodeTitle  = "RyanCode Docker ( 範例 )"
+# MyCodeString = '''
+# ###  Docker 範例程式 ####
+# ## 檔案: mainCode_docker
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# '''
+# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
+
+
+### -------------------------------------------------------------------
+MyCodeTitle  = "RyanCode Docker ( docker list all version 找到個版本 )"
+MyCodeString = '''
+###  Docker docker list all version 找到個版本 ####
+## 檔案: mainCode_docker
+
+## 搜尋 nginx/unit 版本
+imageName=nginx/unit
+wget -q https://registry.hub.docker.com/v1/repositories/$imageName/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\\n'  | awk -F: '{print $3}'
+'''
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+
+
 ### -------------------------------------------------------------------
 MyCodeTitle  = "RyanCode Docker ( unit php )"
 MyCodeString = '''
@@ -72,7 +97,7 @@ docker commit containersId imageName
 
 ## 搜尋 nginx/unit 版本
 imageName=nginx/unit
-wget -q https://registry.hub.docker.com/v1/repositories/$imageName/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}'
+wget -q https://registry.hub.docker.com/v1/repositories/$imageName/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\\n'  | awk -F: '{print $3}'
 
 # 搜尋到以下版本，使用最後一個
 ## docker pull docker.io/nginx/unit:1.14.0-php7.3
