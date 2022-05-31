@@ -1172,9 +1172,8 @@ MyCodeString = '''
 ###  System squid proxy ####
 ### file: mainCode_System
 
-apt-get install squid squid-common 
-
-subl /etc/squid
+#apt-get install squid squid-common 
+#vi /etc/squid/squid.conf
 
 http_access allow localnet
 http_access allow localhost
@@ -1183,7 +1182,13 @@ http_access allow localhost
 http_access allow all
 
 acl localnet src 192.168.0.0/16
+cache_dir ufs /var/spool/squid 3000 16 256 max-size=200000000
 
+## 重啟 squid ##
+service squid stop
+rm -rf /var/spool/squid/*
+squid -z
+service squid restart
 
 
 ## nuget behind proxy ##
