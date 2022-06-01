@@ -21,14 +21,24 @@ import sys
 # print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
-# ### -------------------------------------------------------------------
-# MyCodeTitle  = "RyanCode Docker ( 範例 )"
-# MyCodeString = '''
-# ###  Docker 範例程式 ####
-# ## 檔案: mainCode_docker
-# xxxxxxxxxxxxxxxxxxxxxxxxxxx
-# '''
-# print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
+### -------------------------------------------------------------------
+MyCodeTitle  = "RyanCode Docker ( keep container running 保持運作 )"
+MyCodeString = '''
+###  Docker keep container running 保持運作 ####
+## 檔案: mainCode_docker
+sleep infinity
+
+# vi docker-compose.yml
+version: '3'
+services:
+  some-app:
+    tty: true
+    command: tail -f /dev/null
+
+# vi Dockerfile
+CMD sleep infinity
+'''
+print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
 
 
 
