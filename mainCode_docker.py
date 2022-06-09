@@ -22,25 +22,48 @@ import sys
 
 
 ### -------------------------------------------------------------------
-MyCodeTitle  = "RyanCode Docker ( keep container running 保持運作 )"
+MyCodeTitle  = "RyanCode Docker ( Dockerfile php:8.1.6-apache )"
 MyCodeString = '''
-###  Docker keep container running 保持運作 ####
+###  Docker 範例程式 ####
 ## 檔案: mainCode_docker
-sleep infinity
+FROM php:8.1.6-apache
+RUN docker-php-ext-enable sodium
 
-# vi docker-compose.yml
-version: '3'
-services:
-  some-app:
-    tty: true
-    command: tail -f /dev/null
+RUN apt-get install -y libpq-dev libldap2-dev
+RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
+RUN docker-php-ext-install pdo pdo_pgsql pgsql
+RUN docker-php-ext-configure ldap --with-libdir=/lib/x86_64-linux-gnu/
+RUN docker-php-ext-install ldap
+RUN docker-php-ext-install pdo_mysql
 
-# vi Dockerfile
-CMD sleep infinity
+### SQL SERVER
+RUN apt-get -y --no-install-recommends install apt-utils libxml2-dev gnupg apt-transport-https
+RUN apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - 
+RUN curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list
+RUN apt-get update
+RUN apt-get -y --no-install-recommends install msodbcsql17 unixodbc-dev
+
+#RUN pecl install sqlsrv 
+RUN pecl install pdo_sqlsrv
+
+RUN echo "extension=pdo_sqlsrv.so" >> `php --ini | grep "Scan for additional .ini files" | sed -e "s|.*:\s*||"`/30-pdo_sqlsrv.ini
+RUN echo "extension=sqlsrv.so" >> `php --ini | grep "Scan for additional .ini files" | sed -e "s|.*:\s*||"`/30-sqlsrv.ini
+RUN apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+RUN docker-php-ext-install intl mysqli pdo pdo_mysql
+
+#RUN docker-php-ext-enable sqlsrv
+RUN docker-php-ext-enable pdo_sqlsrv
+
+RUN docker-php-source delete
+
+ENTRYPOINT ["docker-php-entrypoint"]
+STOPSIGNAL SIGWINCH
+WORKDIR /var/www/html
+EXPOSE 80
+CMD ["apache2-foreground"]
 '''
 print(f"{MyCodeTitle},,,,,,,,,,{MyCodeString},,,,,,,,,,")
-
-
 
 
 ### -------------------------------------------------------------------
